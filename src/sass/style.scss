@@ -1,5 +1,66 @@
+@import './base';
+@import './placeholders';
+
 *, ::before, ::after{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: $font-stack;
+    color: $text-color;
 }
+
+h1, h2{
+    color: $primary-color;
+    text-align: center;
+}
+
+form{
+    width: 50%;
+    margin: 2vh auto;
+}
+
+hr{
+    width: 50%;
+    margin: 1em auto;
+    border: 1px dotted $primary-color;
+}
+
+fieldset{
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"]{
+    @extend %input-form;
+}
+
+input[type="submit"]{
+    width: 100%;
+    margin: 1vh 0;
+    background: $primary-color;
+    color: $white-color;
+    text-transform: uppercase;
+    font-weight: bold;
+    @extend %input-form;
+}
+
+#infoUser, 
+#infoMsg{
+    font-family: $font-msg;
+}
+
+#feed{
+    .pseudo{
+        font-weight: bold;
+    }
+
+    .message{
+        font-family: $font-msg;
+    }
+
+    .posted{
+        font-size: smaller;
+    }
+}
+

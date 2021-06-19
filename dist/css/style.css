@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Poppins&display=swap");
+input[type="text"], input[type="submit"] {
+  padding: .4em;
+  border-radius: .5em;
+  border: 1px solid #0a8f79; }
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #333; }
+
+h1, h2 {
+  color: #0a8f79;
+  text-align: center; }
+
+form {
+  width: 50%;
+  margin: 2vh auto; }
+
+hr {
+  width: 50%;
+  margin: 1em auto;
+  border: 1px dotted #0a8f79; }
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column; }
+
+input[type="submit"] {
+  width: 100%;
+  margin: 1vh 0;
+  background: #0a8f79;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold; }
+
+#infoUser,
+#infoMsg {
+  font-family: "Noto Sans JP", sans-serif; }
+
+#feed .pseudo {
+  font-weight: bold; }
+#feed .message {
+  font-family: "Noto Sans JP", sans-serif; }
+#feed .posted {
+  font-size: smaller; }
+
+/*# sourceMappingURL=style.css.map */
