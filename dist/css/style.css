@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Poppins&display=swap");
+/*Fonts */
+/* Text colors */
+/*Elements colors */
 input[type="text"], input[type="submit"] {
   padding: .4em;
   border-radius: .5em;
@@ -40,6 +43,9 @@ input[type="submit"] {
 #infoUser,
 #infoMsg {
   font-family: "Noto Sans JP", sans-serif; }
+
+.msg-error {
+  color: #b40f0f; }
 
 #feed .pseudo {
   font-weight: bold; }

@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Poppins&display=swap');
 
+/*Fonts */
 $font-stack: 'Poppins', sans-serif;
 $font-msg : 'Noto Sans JP', sans-serif;
+
+/* Text colors */
+$text-color : #333;
+$text-alert : rgb(180, 15, 15);
+$text-right : rgb(9, 104, 9);
+
+/*Elements colors */
 $primary-color: rgb(10, 143, 121);
 $white-color: white;
-$text-color : #333;
+$valid-color: $text-right;
+$invalid-color: $text-alert;

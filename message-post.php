@@ -19,7 +19,7 @@ include('database.php');
             'message' => htmlspecialchars($_POST['message'])
         ));
     } else {
-        echo '<span class="msg-errorsaisie">Saisissez votre pseudo et/ou votre message valides, merci :)</span>';
+        echo '<span class="msg-error">Saisissez votre pseudo et/ou votre message valides, merci :)</span>';
     }
 
     header('Location: index.php');

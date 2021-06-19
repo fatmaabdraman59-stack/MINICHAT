@@ -50,6 +50,10 @@ input[type="submit"]{
     font-family: $font-msg;
 }
 
+.msg-error{
+    color: $text-alert;
+}
+
 #feed{
     .pseudo{
         font-weight: bold;
