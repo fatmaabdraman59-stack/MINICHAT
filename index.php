@@ -18,7 +18,7 @@
     </header>
     <section>
         <h2>Tchatez et enjoy !</h2>
-        <form action="#" method="post">
+        <form action="message-post.php" method="post">
             <fieldset>
                 <label for="pseudo">Votre pseudo</label>
                 <input type="text" name="pseudo" id="pseudo">
