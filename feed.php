@@ -1,4 +1,7 @@
 <?php
+
+use function PHPSTORM_META\type;
+
 $reponse = $bdd->query('SELECT pseudo, 
                                 message,
                                 LOWER(DAYNAME(date_creation)) AS nameday, 
@@ -15,8 +18,16 @@ $reponse = $bdd->query('SELECT pseudo,
 while($datas = $reponse->fetch()){
 ?>
 <div class="feed-content">
-    <p class="post"><?php echo '<span class="pseudo">'.$datas['pseudo'].'</span>' .' <span class="message">" '. $datas['message'].' "</span>'; ?></p>
-    <p class="time"><?php echo '<span class="posted">posté le '. $datas['nameday']. ' '. $datas['day']. '/'. $datas['month'].'/'. $datas['year']. ' à '. $datas['hour'] . ' h ' . $datas['minute']. ' m ' . $datas['seconde'] . ' s </span>';?></p>
+    <p class="post"><?php echo '<span class="pseudo">'. $datas['pseudo'] .'</span>' .' <span class="message">" '. $datas['message'] .' "</span>'; ?></p>
+    <?php
+    // Set value with a zero when this is smaller 10
+    $day = (int) $datas['day'] < 10 ?  '0'. $datas['day'] :  $datas['day'];
+    $month = (int) $datas['month'] < 10 ? '0'. $datas['month'] :  $datas['month'];
+    $hour = (int) $datas['hour'] < 10 ? '0'. $datas['hour'] :  $datas['hour'];
+    $minute = (int) $datas['minute'] < 10 ? '0'. $datas['minute'] :  $datas['minute'];  
+    $seconde = (int) $datas['seconde'] < 10 ? '0'. $datas['seconde'] :  $datas['seconde'];
+    ?>
+    <p class="time"><?php echo '<span class="posted">Posté le '. $datas['nameday'] . ' '. $day . '/'. $month .'/'. $datas['year'] . ' à '. $hour . ' h ' . $minute . ' m ' . $seconde . ' s </span>';?></p>
 </div>
 <?php    
 }
