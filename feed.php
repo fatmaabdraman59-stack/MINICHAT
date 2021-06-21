@@ -15,8 +15,8 @@ $reponse = $bdd->query('SELECT pseudo,
 while($datas = $reponse->fetch()){
 ?>
 <div class="feed-content">
-    <p class="post"><?php echo '<strong>'.$datas['pseudo'].'</strong>' .' " '. $datas['message'].' "'; ?></p>
-    <p class="time"><?php echo 'posté le '. $datas['nameday']. ' '. $datas['day']. '/'. $datas['month'].'/'. $datas['year']. ' à '. $datas['hour'] . ' h ' . $datas['minute']. ' m ' . $datas['seconde'] . ' s ';?></p>
+    <p class="post"><?php echo '<span class="pseudo">'.$datas['pseudo'].'</span>' .' <span class="message">" '. $datas['message'].' "</span>'; ?></p>
+    <p class="time"><?php echo '<span class="posted">posté le '. $datas['nameday']. ' '. $datas['day']. '/'. $datas['month'].'/'. $datas['year']. ' à '. $datas['hour'] . ' h ' . $datas['minute']. ' m ' . $datas['seconde'] . ' s </span>';?></p>
 </div>
 <?php    
 }

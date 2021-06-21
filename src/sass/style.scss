@@ -15,8 +15,7 @@ h1, h2{
 }
 
 form{
-    width: 50%;
-    margin: 2vh auto;
+    @extend %block-center;
 }
 
 hr{
@@ -55,12 +54,16 @@ input[type="submit"]{
 }
 
 #feed{
+
+    @extend %block-center;
+    
     .pseudo{
         font-weight: bold;
     }
 
     .message{
         font-family: $font-msg;
+        font-style: italic;
     }
 
     .posted{

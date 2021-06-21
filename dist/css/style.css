@@ -7,6 +7,10 @@ input[type="text"], input[type="submit"] {
   border-radius: .5em;
   border: 1px solid #0a8f79; }
 
+form, #feed {
+  width: 50%;
+  margin: 2vh auto; }
+
 *, ::before, ::after {
   box-sizing: border-box;
   padding: 0;
@@ -17,10 +21,6 @@ input[type="text"], input[type="submit"] {
 h1, h2 {
   color: #0a8f79;
   text-align: center; }
-
-form {
-  width: 50%;
-  margin: 2vh auto; }
 
 hr {
   width: 50%;
@@ -50,7 +50,8 @@ input[type="submit"] {
 #feed .pseudo {
   font-weight: bold; }
 #feed .message {
-  font-family: "Noto Sans JP", sans-serif; }
+  font-family: "Noto Sans JP", sans-serif;
+  font-style: italic; }
 #feed .posted {
   font-size: smaller; }
 
