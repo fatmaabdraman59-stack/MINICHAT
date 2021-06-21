@@ -34,8 +34,7 @@
         <hr>
         <div id="feed">
             <h2>Fil des messages</h2>
-            <div id="feed-content">
-            </div>
+            <?php include('feed.php') ?>
         </div>
     </section>
     
