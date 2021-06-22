@@ -47,6 +47,9 @@ input[type="submit"] {
 #infoMsg {
   font-family: "Noto Sans JP", sans-serif; }
 
+.msg-right {
+  color: #096809; }
+
 .msg-error {
   color: #b40f0f; }
 

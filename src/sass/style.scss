@@ -53,6 +53,10 @@ input[type="submit"]{
     font-family: $font-msg;
 }
 
+.msg-right{
+    color: $text-right;
+}
+
 .msg-error{
     color: $text-alert;
 }
@@ -71,7 +75,7 @@ input[type="submit"]{
     }
 
     .posted{
-        font-size:x-small;
+        font-size: x-small;
         color: $primary-color;
     }
 
