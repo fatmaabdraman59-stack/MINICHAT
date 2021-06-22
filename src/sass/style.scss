@@ -71,7 +71,18 @@ input[type="submit"]{
     }
 
     .posted{
-        font-size: smaller;
+        font-size:x-small;
+        color: $primary-color;
     }
 
+}
+
+.feed-content{
+    background-color: $grey-light;
+    border-bottom: 1px solid $white-color;
+    padding: .5em .2em; 
+}
+
+.time{
+    text-align: end;
 }

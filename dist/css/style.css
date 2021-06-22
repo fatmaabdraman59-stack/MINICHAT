@@ -56,6 +56,15 @@ input[type="submit"] {
   font-family: "Noto Sans JP", sans-serif;
   font-style: italic; }
 #feed .posted {
-  font-size: smaller; }
+  font-size: x-small;
+  color: #0a8f79; }
+
+.feed-content {
+  background-color: #ccc;
+  border-bottom: 1px solid white;
+  padding: .5em .2em; }
+
+.time {
+  text-align: end; }
 
 /*# sourceMappingURL=style.css.map */
