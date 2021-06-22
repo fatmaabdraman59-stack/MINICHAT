@@ -14,6 +14,10 @@ h1, h2{
     text-align: center;
 }
 
+.hello{
+    text-align: center;
+}
+
 form{
     @extend %block-center;
 }
@@ -69,5 +73,5 @@ input[type="submit"]{
     .posted{
         font-size: smaller;
     }
-}
 
+}

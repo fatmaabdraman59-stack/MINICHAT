@@ -1,7 +1,5 @@
 <?php
 
-use function PHPSTORM_META\type;
-
 $reponse = $bdd->query('SELECT pseudo, 
                                 message,
                                 LOWER(DAYNAME(date_creation)) AS nameday, 

@@ -17,11 +17,12 @@
         <h1>Bienvenue dans le chat</h1>
     </header>
     <section>
+        <p class="hello"><?php echo isset($_COOKIE['pseudo']) ? 'Bonjour ' . htmlspecialchars($_COOKIE["pseudo"]) . ' !': ''; ?></p>
         <h2>Tchatez et enjoy !</h2>
         <form action="message-post.php" method="post">
             <fieldset>
                 <label for="pseudo">Votre pseudo</label>
-                <input type="text" name="pseudo" id="pseudo">
+                <input type="text" name="pseudo" id="pseudo" value="<?php echo isset($_COOKIE['pseudo']) ? $_COOKIE['pseudo']:'""' ?>">
                 <p id="infoUser"></p>
             </fieldset>
             <fieldset>
