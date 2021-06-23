@@ -68,6 +68,15 @@ input[type="submit"] {
   padding: .5em .2em; }
 
 .time {
-  text-align: end; }
+  text-align: end;
+  font-weight: 600; }
+
+/* Responsive display */
+@media (min-width: 1012px) {
+  form, #feed, hr {
+    width: 35%; } }
+@media (max-width: 495px) {
+  form, #feed, hr {
+    width: 80%; } }
 
 /*# sourceMappingURL=style.css.map */

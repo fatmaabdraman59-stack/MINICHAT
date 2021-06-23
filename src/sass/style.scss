@@ -89,4 +89,18 @@ input[type="submit"]{
 
 .time{
     text-align: end;
+    font-weight: 600;
+}
+
+/* Responsive display */
+@media (min-width:1012px){
+    form, #feed, hr{
+        width: 35%;
+    }
+}
+
+@media (max-width:495px){
+    form, #feed, hr{
+        width: 80%;
+    }
 }

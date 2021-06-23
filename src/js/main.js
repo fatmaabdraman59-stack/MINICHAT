@@ -16,13 +16,13 @@ $inputPseudo.addEventListener("input", () => {
             if($infoUser.classList.contains("msg-error")){
                 $infoUser.classList.replace("msg-error", "msg-right")
             } 
-            //$infoUser.classList.add("msg-right");
+            $infoUser.classList.add("msg-right");
             $infoUser.textContent = `Votre pseudo est valide`;
         } else {
             if($infoUser.classList.contains("msg-right")){
                 $infoUser.classList.replace("msg-right", "msg-error")
             } 
-            //$infoUser.classList.add("msg-error");
+            $infoUser.classList.add("msg-error");
             $infoUser.textContent = `Votre pseudo n'est pas valide`;
         }
     }
