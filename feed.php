@@ -1,5 +1,4 @@
 <?php
-
 $reponse = $bdd->query('SELECT pseudo, 
                                 message,
                                 LOWER(DAYNAME(date_creation)) AS nameday, 
