@@ -18,6 +18,9 @@ form, #feed {
   font-family: "Poppins", sans-serif;
   color: #333; }
 
+.loading {
+  animation-play-state: paused !important; }
+
 h1, h2 {
   color: #0a8f79;
   text-align: center; }
@@ -71,6 +74,15 @@ input[type="submit"] {
   text-align: end;
   font-weight: 600; }
 
+.last-msg {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: displaying 0.4s 1.6s ease-out forwards; }
+
+@keyframes displaying {
+  100% {
+    opacity: 1;
+    transform: none; } }
 /* Responsive display */
 @media (min-width: 1012px) {
   form, #feed, hr {

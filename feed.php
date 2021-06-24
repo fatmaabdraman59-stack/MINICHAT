@@ -14,7 +14,7 @@ $reponse = $bdd->query('SELECT pseudo,
 
 while($datas = $reponse->fetch()){
 ?>
-<div class="feed-content">
+<div class="feed-content last-msg">
     <p class="post"><?php echo '<span class="pseudo">'. $datas['pseudo'] .'</span>' .' <span class="message">" '. $datas['message'] .' "</span>'; ?></p>
     <?php
     // Set value with a zero when this is smaller 10

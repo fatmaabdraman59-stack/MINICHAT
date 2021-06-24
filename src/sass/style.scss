@@ -9,6 +9,10 @@
     color: $text-color;
 }
 
+.loading{
+    animation-play-state: paused !important;
+}
+
 h1, h2{
     color: $primary-color;
     text-align: center;
@@ -90,6 +94,20 @@ input[type="submit"]{
 .time{
     text-align: end;
     font-weight: 600;
+}
+
+
+.last-msg{
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: displaying 0.4s 1.6s ease-out forwards;
+}
+
+@keyframes displaying{
+    100%{
+        opacity: 1;
+        transform: none;
+    }
 }
 
 /* Responsive display */
