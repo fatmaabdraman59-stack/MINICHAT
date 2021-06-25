@@ -20,12 +20,13 @@ while($datas = $reponse->fetch()){
 <div class="feed-content last-msg">
     <p class="post"><?php echo '<span class="pseudo">'. $datas['pseudo'] .'</span>' .' <span class="message">" '. $datas['message'] .' "</span>'; ?></p>
     <?php
-    // Set value with a zero when this is smaller 10
-    $day = (int) $datas['day'] < 10 ?  '0'. $datas['day'] :  $datas['day'];
-    $month = (int) $datas['month'] < 10 ? '0'. $datas['month'] :  $datas['month'];
-    $hour = (int) $datas['hour'] < 10 ? '0'. $datas['hour'] :  $datas['hour'];
-    $minute = (int) $datas['minute'] < 10 ? '0'. $datas['minute'] :  $datas['minute'];  
-    $seconde = (int) $datas['seconde'] < 10 ? '0'. $datas['seconde'] :  $datas['seconde'];
+    // Set value with a zero when this is smaller than 10
+    $day = setZeroBeforeAValue($datas['day']);
+    $month = setZeroBeforeAValue($datas['month']);
+    $hour = setZeroBeforeAValue($datas['hour']);
+    $minute = setZeroBeforeAValue($datas['minute']);
+    $seconde = setZeroBeforeAValue($datas['seconde']);
+    // Translate dayname to french language
     $dayname = dateFrench($datas['nameday']);
     ?>
     <p class="time"><?php echo '<span class="posted">Posté le '. $dayname . ' '. $day . '/'. $month .'/'. $datas['year'] . ' à '. $hour . ' h ' . $minute . ' m ' . $seconde . ' s </span>';?></p>
