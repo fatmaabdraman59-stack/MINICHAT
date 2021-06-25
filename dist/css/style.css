@@ -21,9 +21,17 @@ form, #feed {
 .loading {
   animation-play-state: paused !important; }
 
+header {
+  margin-bottom: 2vh;
+  padding: 2vh 0;
+  box-shadow: 0 0.1em 0.4em #eee; }
+
 h1, h2 {
   color: #0a8f79;
   text-align: center; }
+
+#feed h2 {
+  margin-bottom: 1vh; }
 
 .hello {
   text-align: center; }
@@ -40,11 +48,17 @@ fieldset {
 
 input[type="submit"] {
   width: 100%;
-  margin: 1vh 0;
+  margin: 2vh 0;
   background: #0a8f79;
   color: white;
   text-transform: uppercase;
-  font-weight: bold; }
+  font-weight: bold;
+  transition: all 0.5s ease-in-out; }
+  input[type="submit"]:hover {
+    background: white;
+    color: #0a8f79; }
+  input[type="submit"]:active {
+    box-shadow: 0.3em 0.3em 0.6em #eee; }
 
 #infoUser,
 #infoMsg {

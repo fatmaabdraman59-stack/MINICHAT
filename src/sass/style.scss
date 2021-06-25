@@ -13,9 +13,19 @@
     animation-play-state: paused !important;
 }
 
+header{
+    margin-bottom: 2vh;
+    padding: 2vh 0;
+    box-shadow: 0 .1em .4em $grey-light;
+}
+
 h1, h2{
     color: $primary-color;
     text-align: center;
+}
+
+#feed h2{
+    margin-bottom: 1vh;
 }
 
 .hello{
@@ -44,12 +54,22 @@ input[type="text"]{
 
 input[type="submit"]{
     width: 100%;
-    margin: 1vh 0;
+    margin: 2vh 0;
     background: $primary-color;
     color: $white-color;
     text-transform: uppercase;
     font-weight: bold;
+    transition: all 0.5s ease-in-out;
     @extend %input-form;
+
+    &:hover{
+        background: $white-color;
+        color: $primary-color;
+    }
+
+    &:active{
+        box-shadow: .3em .3em .6em $grey-light;
+    }
 }
 
 #infoUser, 
