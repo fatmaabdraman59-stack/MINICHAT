@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import * as util from './utils';
 
 const $inputPseudo = document.querySelector("#pseudo");
