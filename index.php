@@ -9,7 +9,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./dist/css/style.css">
     <!-- script -->
-    <script type="module" defer src="./dist/bundle.js"></script>
+    <script defer src="./dist/bundle.js"></script>
     <title>Mini-Chat</title>
 </head>
 <body>
