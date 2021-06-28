@@ -8,13 +8,14 @@ $_SESSION['pseudo'] = $_POST["pseudo"];
 
 setcookie('pseudo', $_POST["pseudo"], time() + 365*24*3600,null, null, false, true);
 
-include('database.php');
+require './model/model.php';
 
 // Post contents
     if(isset($_POST["pseudo"]) 
     && isset($_POST["message"]) 
     && strlen($_POST["pseudo"]) > 1 
     && strlen($_POST["message"]) > 5 ){
+        $bdd = getDB();
         $req = $bdd->prepare('INSERT INTO `chat`( `pseudo`, `message`) 
                               VALUES (:pseudo,:message)');
         $req->execute(array(

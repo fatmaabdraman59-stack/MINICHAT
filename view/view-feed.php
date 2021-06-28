@@ -1,19 +1,8 @@
+<div id="feed">
+    <h2>Fil des messages</h2>
 <?php
-require('utils.php');
 
-$reponse = $bdd->query('SELECT pseudo, 
-                                message,
-                                LOWER(DAYNAME(date_creation)) AS nameday, 
-                                DAY(date_creation) AS day, 
-                                MONTH(date_creation) AS month,
-                                YEAR(date_creation) AS year,
-                                HOUR(date_creation) AS hour,
-                                MINUTE(date_creation) AS minute,
-                                SECOND(date_creation) AS seconde 
-                        FROM chat 
-                        ORDER BY id 
-                        DESC LIMIT 0, 10
-                        ');
+require('view-utils.php');
 
 while($datas = $reponse->fetch()){
 ?>
@@ -35,3 +24,7 @@ while($datas = $reponse->fetch()){
 }
 $reponse->closeCursor();
 ?>
+     </div>
+    </section>   
+</body>
+</html>
