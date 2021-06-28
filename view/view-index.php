@@ -17,7 +17,7 @@
     <section>
         <p class="hello"><?php echo isset($_COOKIE['pseudo']) ? 'Bonjour ' . $_COOKIE["pseudo"] . ' !': ''; ?></p>
         <h2>Tchatez et enjoy !</h2>
-        <form action="view-message-post.php" method="post">
+        <form action="message-post.php" method="post">
             <fieldset>
                 <label for="pseudo">Votre pseudo</label>
                 <input type="text" name="pseudo" id="pseudo" value="<?php echo isset($_COOKIE['pseudo']) ? $_COOKIE['pseudo']:'""' ?>" aria-describedby="infoUser" autofocus>
@@ -31,11 +31,3 @@
             <input type="submit" value="Envoyer">
         </form>
         <hr>
-        <!-- <div id="feed">
-            <h2>Fil des messages</h2>
-            <?php //include('view-feed.php') ?>
-        </div>
-    </section>
-    
-</body>
-</html> -->

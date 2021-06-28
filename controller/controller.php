@@ -11,5 +11,14 @@ function feed(){
     include('./view/view-feed.php');
 }
 
+function getConnectionDb(){
+   $bdd = getDB();
+   return $bdd;
+}
+
+function setSession(){
+    createSession();
+}
+
 
 
