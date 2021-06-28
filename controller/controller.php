@@ -2,6 +2,10 @@
 
 require './model/model.php';
 
+function head(){
+    include('./view/view-head.php');
+}
+
 function home(){
     include('./view/view-index.php');   
 }
