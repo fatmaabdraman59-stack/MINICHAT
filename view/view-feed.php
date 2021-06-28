@@ -25,6 +25,4 @@ while($datas = $reponse->fetch()){
 $reponse->closeCursor();
 ?>
      </div>
-    </section>   
-</body>
-</html>
+    </section>

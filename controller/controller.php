@@ -11,6 +11,10 @@ function feed(){
     include('./view/view-feed.php');
 }
 
+function footer(){
+    include('./view/view-footer.php');
+}
+
 function getConnectionDb(){
    $bdd = getDB();
    return $bdd;
