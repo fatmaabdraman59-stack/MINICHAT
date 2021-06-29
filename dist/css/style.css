@@ -81,7 +81,7 @@ input[type="submit"] {
 .feed-content {
   background-color: #eee;
   border-bottom: 1px solid white;
-  padding: .5em .2em; }
+  padding: .5em; }
 
 .time {
   text-align: end;
