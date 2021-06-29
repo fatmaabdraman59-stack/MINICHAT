@@ -44,4 +44,10 @@ function setZeroBeforeAValue($datas){
     return (int) $datas < 10 ?  '0'. $datas :  $datas;
 }
 
+$infoPages = array(
+    'chat' => array(
+        'metadesc' => 'Discutez et échangez vos idées via ce chat'
+        )
+    );
+
 ?>

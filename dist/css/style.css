@@ -73,8 +73,7 @@ input[type="submit"] {
 #feed .pseudo {
   font-weight: bold; }
 #feed .message {
-  font-family: "Noto Sans JP", sans-serif;
-  font-style: italic; }
+  font-family: "Noto Sans JP", sans-serif; }
 #feed .posted {
   font-size: x-small;
   color: #0a8f79; }
@@ -97,6 +96,15 @@ input[type="submit"] {
   100% {
     opacity: 1;
     transform: none; } }
+footer {
+  margin-top: 5vh;
+  padding: 2vh 0;
+  box-shadow: 0 -0.1em 0.4em #eee; }
+  footer p {
+    text-align: center;
+    font-size: small;
+    font-weight: 600; }
+
 /* Responsive display */
 @media (min-width: 1012px) {
   form, #feed, hr {
