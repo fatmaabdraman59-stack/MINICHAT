@@ -1,0 +1,28 @@
+services:
+  db:
+    # container_name: mariadb
+    image: mariadb:10.11
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin123
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8000:80
+    environment:
+      - PMA_ARBITRARY=1
+    depends_on:
+      - db
+  app:
+    build: .
+    depends_on:
+      - db
+      - phpmyadmin
+    environment:
+      - MYSQL_HOST=mariadb
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=admin123
+      - DATABASE=mini_chat
+    ports:
+      - 8001:80

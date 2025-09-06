@@ -4,12 +4,18 @@
  * Get database connection
  * @return object
  */
-function getDB(){
-    try{
-        $bdd = new PDO('mysql:host=localhost;dbname=minichat;port=3308;charset=utf8', 'root', '');
+
+function getDB()
+{
+    $mysql_host = getenv('MYSQL_HOST');
+    $mysql_user = getenv('MYSQL_USER');
+    $mysql_password = getenv('MYSQL_PASSWORD');
+    $database = getenv('DATABASE');
+    try {
+        $bdd = new PDO("mysql:host=$mysql_host;dbname=$database;charset=utf8", $mysql_user, $mysql_password);
         $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch(Exception $e){
-        die('Erreur : '. $e->getMessage());
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
     }
 
     return $bdd;
@@ -19,7 +25,8 @@ function getDB(){
  * Set all messages of users of the chat stored on database
  * @return object
  */
-function setPosts(){
+function setPosts()
+{
     $db = getDB();
     $reponse = $db->query('SELECT pseudo, 
                                 message,
@@ -34,16 +41,17 @@ function setPosts(){
                             ORDER BY id 
                             DESC LIMIT 0, 20
                             ');
-    return $reponse;                    
+    return $reponse;
 }
 
 /**
  * Set cookie with pseudo of user
  * @return bool
  */
-function createSession(){
-    session_set_cookie_params(["SameSite" => "Strict"]); 
-    session_set_cookie_params(["Secure" => "true"]); 
+function createSession()
+{
+    session_set_cookie_params(["SameSite" => "Strict"]);
+    session_set_cookie_params(["Secure" => "true"]);
     session_set_cookie_params(["HttpOnly" => "true"]);
     session_start();
     $_SESSION['pseudo'] = $_POST["pseudo"];
