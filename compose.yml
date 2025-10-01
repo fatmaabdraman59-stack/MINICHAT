@@ -1,28 +1,62 @@
 services:
   db:
-    # container_name: mariadb
     image: mariadb:10.11
     restart: always
     environment:
+      MYSQL_DATABASE: mini_chat
       MYSQL_ROOT_PASSWORD: admin123
+    volumes:
+      - ./db-init:/docker-entrypoint-initdb.d
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - mini_chat_net
+
   phpmyadmin:
     image: phpmyadmin
     restart: always
     ports:
-      - 8000:80
+      - "8002:80"
     environment:
       - PMA_ARBITRARY=1
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+    networks:
+      - mini_chat_net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   app:
     build: .
     depends_on:
-      - db
-      - phpmyadmin
+      db:
+        condition: service_healthy
     environment:
-      - MYSQL_HOST=mariadb
+      - MYSQL_HOST=db
       - MYSQL_USER=root
       - MYSQL_PASSWORD=admin123
       - DATABASE=mini_chat
     ports:
-      - 8001:80
+      - "8001:80"
+    networks:
+      - mini_chat_net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  db_data:
+
+networks:
+  mini_chat_net:
+    driver: bridge

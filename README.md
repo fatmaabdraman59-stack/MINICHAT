@@ -26,4 +26,4 @@ If you want to create your own database, here are the elements to create for its
 |----------------|-----------------|-----------------|-------------------|
 | int(11)        | varchar(255)    | varchar(255)    | datetime          |
 |                | uft8_general_ci | uft8_general_ci |                   |
-| AUTO_INCREMENT |                 |                 | CURRENT_TIMESTAMP |
+| AUTO_INCREMENT |                 |                 | CURRENT_TIMESTAMP |# MINICHAT

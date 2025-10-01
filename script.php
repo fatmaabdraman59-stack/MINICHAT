@@ -13,11 +13,11 @@ try {
     // Requête SQL pour créer la table
     $sql = "
         CREATE TABLE IF NOT EXISTS chat (
-            id INT(11) AUTO_INCREMENT PRIMARY KEY,
-            pseudo VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-            message VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            pseudo VARCHAR(50) NOT NULL,
+            message TEXT NOT NULL,
             date_creation DATETIME DEFAULT CURRENT_TIMESTAMP
-        )
+        );
     ";
 
     // Exécution de la requête

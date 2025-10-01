@@ -15,7 +15,7 @@ function getDB()
         $bdd = new PDO("mysql:host=$mysql_host;dbname=$database;charset=utf8", $mysql_user, $mysql_password);
         $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch (Exception $e) {
-        die('Erreur : ' . $e->getMessage());
+        die('Erreur for model: ' . $e->getMessage());
     }
 
     return $bdd;
@@ -56,5 +56,14 @@ function createSession()
     session_start();
     $_SESSION['pseudo'] = $_POST["pseudo"];
 
-    return setcookie('pseudo', $_POST["pseudo"], time() + 365 * 24 * 3600, null, null, false, true);
+    return setcookie(
+        'pseudo',
+        $_POST['pseudo'],
+        [
+            'expires'  => time() + 365 * 24 * 3600, // 1 an
+            'path'     => '/',
+            'secure'   => false,  // true si HTTPS
+            'httponly' => true
+        ]
+    );
 }

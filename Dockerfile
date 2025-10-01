@@ -1,13 +1,11 @@
-# Étape 1 : Build frontend avec Node.js
 FROM php:8.2-apache
 
-COPY . /var/www/html/
-WORKDIR /var/www/html
-# FROM node:22 AS frontend-builder
-# RUN npm install
-# RUN npm run build
-# Étape 2 : Serveur PHP avec Apache
-# Installation des dépendances nécessaires
+# Ajout des labels de maintenance
+LABEL maintainer="fatmaabdraman59@gmail.com"
+LABEL version="1.0"
+LABEL description="PHP Chat Application"
+
+# Installation des dépendances
 RUN apt-get update && apt-get install -y \
     libzip-dev \
     libpng-dev \
@@ -16,24 +14,28 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libxml2-dev \
     libicu-dev \
+    curl \
     && docker-php-ext-configure intl \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd \
-    && docker-php-ext-install pdo pdo_mysql mysqli mbstring zip dom
+    && docker-php-ext-install pdo pdo_mysql mysqli mbstring zip dom \
+    && a2enmod rewrite \
+    # Nettoyage
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-#RUN docker-php-ext-install pdo pdo_mysql mysqli mbstring intl zip dom
+# Création d'un utilisateur non-root
+RUN useradd -r -g www-data -s /bin/bash -d /home/appuser appuser \
+    && mkdir -p /home/appuser \
+    && chown -R appuser:www-data /home/appuser
 
+WORKDIR /var/www/html
+COPY --chown=appuser:www-data . .
 
-# Activation du module rewrite (utile pour les frameworks)
-RUN a2enmod rewrite
-
-# Copie du frontend compilé dans le dossier public
-#COPY /app /var/www/html/
-
-#WORKDIR /var/www/html
-
-# Exécution du script PHP au build (à éviter si ce script est dynamique)
-CMD ["php", "script.php"]
-
+# Utilisation de l'utilisateur non-root
+USER appuser
 
 EXPOSE 80
+
+HEALTHCHECK --interval=30s --timeout=3s \
+    CMD curl -f http://localhost/ || exit 1
