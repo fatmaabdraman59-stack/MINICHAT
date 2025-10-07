@@ -34,7 +34,7 @@ services:
       timeout: 5s
       retries: 5
 
-  app:
+   app:
     build: .
     depends_on:
       db:
@@ -44,8 +44,8 @@ services:
       - MYSQL_USER=root
       - MYSQL_PASSWORD=admin123
       - DATABASE=mini_chat
-    ports:
-      - "8001:80"
+    labels:
+      - "coolify.port=80"
     networks:
       - mini_chat_net
     healthcheck:
@@ -53,6 +53,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+
 
 volumes:
   db_data:
